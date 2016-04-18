@@ -1,3 +1,4 @@
+// Package pequal provides utility functions to compare two pointers of the built-in type
 package pequal
 
 // Uint8 compares two uint8 equalities

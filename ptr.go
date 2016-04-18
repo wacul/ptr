@@ -1,3 +1,4 @@
+// Package ptr provides utility functions to get the pointer of the built-in type
 package ptr
 
 // Uint8 will get a pointer of the uint8
