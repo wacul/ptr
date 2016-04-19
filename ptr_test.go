@@ -1,6 +1,9 @@
 package ptr
 
-import "testing"
+import (
+	"testing"
+	"time"
+)
 
 func TestUint8(t *testing.T) {
 	var x uint8
@@ -215,5 +218,17 @@ func TestBool(t *testing.T) {
 	}
 	if *p != x {
 		t.Fatalf("failed to get pointer of Bool, got invalid value: %v", *p)
+	}
+}
+
+func TestTime(t *testing.T) {
+	var x time.Time
+	x = time.Now()
+	p := Time(x)
+	if p == nil {
+		t.Fatalf("failed to get pointer of time.Time, got nil")
+	}
+	if *p != x {
+		t.Fatalf("failed to get pointer of time.Time, got invalid value: %v", *p)
 	}
 }

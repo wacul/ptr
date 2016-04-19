@@ -1,6 +1,8 @@
 // Package pequal provides utility functions to compare two pointers of the built-in type
 package pequal
 
+import "time"
+
 // Uint8 compares two uint8 equalities
 func Uint8(u1 *uint8, u2 *uint8) bool {
 	if u1 == nil {
@@ -143,4 +145,12 @@ func Bool(b1 *bool, b2 *bool) bool {
 		return b2 == nil
 	}
 	return b2 != nil && *b1 == *b2
+}
+
+// Time compares two time.Time equalities
+func Time(b1 *time.Time, b2 *time.Time) bool {
+	if b1 == nil {
+		return b2 == nil
+	}
+	return b2 != nil && b1.Equal(*b2)
 }

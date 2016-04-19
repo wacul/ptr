@@ -1,6 +1,8 @@
 // Package ptr provides utility functions to get the pointer of the built-in type
 package ptr
 
+import "time"
+
 // Uint8 will get a pointer of the uint8
 func Uint8(u uint8) *uint8 {
 	return &u
@@ -89,4 +91,9 @@ func String(s string) *string {
 // Bool will get a pointer of the bool
 func Bool(b bool) *bool {
 	return &b
+}
+
+// Time will get a pointer of the time.Time
+func Time(t time.Time) *time.Time {
+	return &t
 }

@@ -2,6 +2,7 @@ package pequal
 
 import (
 	"testing"
+	"time"
 
 	"github.com/smartystreets/assertions"
 )
@@ -362,6 +363,26 @@ func TestBool(t *testing.T) {
 		t.Fatal(message)
 	}
 	if ok, message := assertions.So(Bool(&x, &y), assertions.ShouldBeFalse); !ok {
+		t.Fatal(message)
+	}
+}
+
+func TestTime(t *testing.T) {
+	var x time.Time = time.Now()
+	var y time.Time = x.Add(5 * time.Minute)
+	if ok, message := assertions.So(Time(nil, nil), assertions.ShouldBeTrue); !ok {
+		t.Fatal(message)
+	}
+	if ok, message := assertions.So(Time(nil, &x), assertions.ShouldBeFalse); !ok {
+		t.Fatal(message)
+	}
+	if ok, message := assertions.So(Time(&x, nil), assertions.ShouldBeFalse); !ok {
+		t.Fatal(message)
+	}
+	if ok, message := assertions.So(Time(&x, &x), assertions.ShouldBeTrue); !ok {
+		t.Fatal(message)
+	}
+	if ok, message := assertions.So(Time(&x, &y), assertions.ShouldBeFalse); !ok {
 		t.Fatal(message)
 	}
 }
