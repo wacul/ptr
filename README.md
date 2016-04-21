@@ -2,7 +2,7 @@
 
 Package 'ptr' provides utility functions to get the pointer of the built-in type.
 
-[![Codeship](https://img.shields.io/codeship/3696d4b0-e7f9-0133-8a9a-7ab9be0b8d5f.svg?maxAge=2592000)]()
+[![Codeship](https://img.shields.io/codeship/3696d4b0-e7f9-0133-8a9a-7ab9be0b8d5f.svg?maxAge=60)](https://codeship.com/projects/147065)
 
 ## Why?
 
