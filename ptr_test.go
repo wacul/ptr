@@ -221,6 +221,26 @@ func TestBool(t *testing.T) {
 	}
 }
 
+func TestTrue(t *testing.T) {
+	p := True()
+	if p == nil {
+		t.Fatalf("failed to get pointer of True, got nil")
+	}
+	if *p != true {
+		t.Fatalf("failed to get pointer of True, got invalid value: %v", *p)
+	}
+}
+
+func TestFalse(t *testing.T) {
+	p := False()
+	if p == nil {
+		t.Fatalf("failed to get pointer of False, got nil")
+	}
+	if *p != false {
+		t.Fatalf("failed to get pointer of False, got invalid value: %v", *p)
+	}
+}
+
 func TestTime(t *testing.T) {
 	var x time.Time
 	x = time.Now()
